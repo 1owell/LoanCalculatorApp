@@ -7,12 +7,396 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:clickable="false"
+        android:editable="false"
+        android:text="Loan Amount:"
+        android:textAlignment="textEnd"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/loanAmountEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="$0.00"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:clickable="false"
+        android:editable="false"
+        android:text="Interest Rate:"
+        android:textAlignment="textEnd"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <SeekBar
+        android:id="@+id/interestRateSeekBar"
+        android:layout_width="212dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/loanAmountEditText"
+        app:layout_constraintStart_toStartOf="@+id/loanAmountEditText"
+        app:layout_constraintTop_toBottomOf="@+id/loanAmountEditText" />
+
+    <TextView
+        android:id="@+id/interestRateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:text="0%"
+        android:textColor="@android:color/black"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/interestRateSeekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toEndOf="@+id/interestRateSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/interestRateSeekBar" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:text="Years"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:text="EMI"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/fiveYearEMIText"
+        app:layout_constraintStart_toStartOf="@+id/fiveYearEMIText"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:text="Total Amount"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/fiveYearTotalText"
+        app:layout_constraintStart_toStartOf="@+id/fiveYearTotalText"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="126dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="5"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/fiveYearEMIText"
+        app:layout_constraintEnd_toStartOf="@+id/fiveYearEMIText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fiveYearEMIText" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="10"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tenYearEMIText"
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/tenYearEMIText" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="15"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/fifteenYearEMIText"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@+id/fifteenYearEMIText" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="20"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/twentyYearEMIText"
+        app:layout_constraintEnd_toEndOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/twentyYearEMIText" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="25"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/twentyFiveYearEMIText"
+        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="@+id/twentyFiveYearEMIText" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="30"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/thirtyYearEMIText"
+        app:layout_constraintEnd_toEndOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toTopOf="@+id/thirtyYearEMIText" />
+
+    <EditText
+        android:id="@+id/fiveYearEMIText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toStartOf="@+id/fiveYearTotalText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/twentyFiveYearTotalText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="@+id/twentyYearTotalText"
+        app:layout_constraintStart_toStartOf="@+id/twentyYearTotalText"
+        app:layout_constraintTop_toBottomOf="@+id/twentyYearTotalText" />
+
+    <EditText
+        android:id="@+id/twentyYearTotalText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="@+id/fifteenYearTotalText"
+        app:layout_constraintStart_toStartOf="@+id/fifteenYearTotalText"
+        app:layout_constraintTop_toBottomOf="@+id/fifteenYearTotalText" />
+
+    <EditText
+        android:id="@+id/fifteenYearTotalText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="@+id/tenYearTotalText"
+        app:layout_constraintStart_toStartOf="@+id/tenYearTotalText"
+        app:layout_constraintTop_toBottomOf="@+id/tenYearTotalText" />
+
+    <EditText
+        android:id="@+id/tenYearTotalText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="@+id/fiveYearTotalText"
+        app:layout_constraintStart_toStartOf="@+id/fiveYearTotalText"
+        app:layout_constraintTop_toBottomOf="@+id/fiveYearTotalText" />
+
+    <EditText
+        android:id="@+id/twentyFiveYearEMIText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="@+id/twentyYearEMIText"
+        app:layout_constraintStart_toStartOf="@+id/twentyYearEMIText"
+        app:layout_constraintTop_toBottomOf="@+id/twentyYearEMIText" />
+
+    <EditText
+        android:id="@+id/thirtyYearEMIText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="@+id/twentyFiveYearEMIText"
+        app:layout_constraintStart_toStartOf="@+id/twentyFiveYearEMIText"
+        app:layout_constraintTop_toBottomOf="@+id/twentyFiveYearEMIText" />
+
+    <EditText
+        android:id="@+id/thirtyYearTotalText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="@+id/twentyFiveYearTotalText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/twentyFiveYearTotalText"
+        app:layout_constraintTop_toBottomOf="@+id/twentyFiveYearTotalText" />
+
+    <EditText
+        android:id="@+id/twentyYearEMIText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="@+id/fifteenYearEMIText"
+        app:layout_constraintStart_toStartOf="@+id/fifteenYearEMIText"
+        app:layout_constraintTop_toBottomOf="@+id/fifteenYearEMIText" />
+
+    <EditText
+        android:id="@+id/fifteenYearEMIText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="@+id/tenYearEMIText"
+        app:layout_constraintStart_toStartOf="@+id/tenYearEMIText"
+        app:layout_constraintTop_toBottomOf="@+id/tenYearEMIText" />
+
+    <EditText
+        android:id="@+id/tenYearEMIText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="@+id/fiveYearEMIText"
+        app:layout_constraintStart_toStartOf="@+id/fiveYearEMIText"
+        app:layout_constraintTop_toBottomOf="@+id/fiveYearEMIText" />
+
+    <EditText
+        android:id="@+id/fiveYearTotalText"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fiveYearEMIText"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
